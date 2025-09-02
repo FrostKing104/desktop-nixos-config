@@ -1,0 +1,19 @@
+{ config, pkgs, ... }:
+
+{
+
+# --- Packages that should be installed to the user profile --- #
+
+  home.packages = with pkgs; [
+    rmpc
+    btop
+    kitty-themes
+    fzf
+    krita
+    dysk
+    base16-schemes
+    pastel
+    darkman
+    tokyonight-gtk-theme
+  ];
+}
