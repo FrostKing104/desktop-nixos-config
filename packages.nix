@@ -77,6 +77,7 @@
     glib
     # -
     gh
+    mpv
   ];
 
   services.tailscale.enable = true;
