@@ -79,6 +79,8 @@
     gh
     mpv
     ddcutil
+    playerctl
+    wtype
   ];
 
   services.tailscale.enable = true;
