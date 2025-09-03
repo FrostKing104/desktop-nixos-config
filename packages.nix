@@ -78,6 +78,7 @@
     # -
     gh
     mpv
+    ddcutil
   ];
 
   services.tailscale.enable = true;
