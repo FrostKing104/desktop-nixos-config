@@ -16,7 +16,7 @@
   outputs = { self, nixpkgs, nix-flatpak, ... }@inputs: {
     # use "nixos", or your hostname as the name of the configuration
     # it's a better practice than "default" shown in the video
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         nix-flatpak.nixosModules.nix-flatpak
