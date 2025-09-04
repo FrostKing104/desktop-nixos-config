@@ -81,7 +81,10 @@
     ddcutil
     playerctl
     wtype
+    # Screenshots
     swappy
+    grim
+    slurp
   ];
 
   services.tailscale.enable = true;
