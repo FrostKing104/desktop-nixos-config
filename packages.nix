@@ -81,6 +81,7 @@
     ddcutil
     playerctl
     wtype
+    swappy
   ];
 
   services.tailscale.enable = true;
