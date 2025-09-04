@@ -12,7 +12,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }: {
+  outputs = { self, nixpkgs, nix-flatpak, home-manager, ... }@inputs: {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
