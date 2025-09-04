@@ -15,5 +15,6 @@
     pastel
     darkman
     tokyonight-gtk-theme
+    osu-lazer-bin
   ];
 }
