@@ -174,22 +174,6 @@ in {
   programs.wavey-launcher.enable = false;
   programs.sleepy-launcher.enable = false;
 
-  # Enable self-hosted game streaming
-  services.apollo = {
-    enable = true;
-    capSysAdmin = true;
-    openFirewall = true;
-    applications = {
-      apps = [
-        {
-          name = "NixOS Desktop";
-          exclude-global-prep-cmd = "false";
-          auto-detach = "true";
-        }
-      ];
-    };
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   
