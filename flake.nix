@@ -13,7 +13,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     apollo-flake = {
-      url = "github:username/apollo-flake";
+      url = "github:nil-andreas/apollo-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
