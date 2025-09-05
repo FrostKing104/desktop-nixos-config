@@ -16,8 +16,8 @@
         telescope.enable = true;
 	autocomplete.nvim-cmp.enable = true;
         # Language Support
+        lsp.enable = true;
         languages = {
-          enableLSP = true;
           enableTreesitter = true;
           nix.enable = true;
           python.enable = true;

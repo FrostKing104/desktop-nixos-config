@@ -6,7 +6,6 @@
     ./wofi.nix
     ./home-modules/packages.nix
     ./home-modules/zsh.nix    
-    ./home-modules/nvim.nix
     ./home-modules/fcitx5.nix
   ];
 
