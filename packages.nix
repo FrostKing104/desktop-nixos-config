@@ -85,6 +85,8 @@
     swappy
     grim
     slurp
+    # Wayland Clipboard Manager
+    cliphist
   ];
 
   services.tailscale.enable = true;
