@@ -161,6 +161,11 @@ in {
     substituters = [ "https://ezkea.cachix.org" ];
     trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
   };
+
+  # Allow App Images to work properly
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
+
   # Environment Variables
   environment.variables = {
     FZF_BASE = "${pkgs.fzf}/share/fzf";
