@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 
 {
+  programs.neovim.enable = true;
   programs.nvf = {
     enable = true;
     settings = {
