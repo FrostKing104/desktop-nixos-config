@@ -8,7 +8,7 @@
         theme = {
           enable = true;
           name = "catppuccin";
-	  style = "dark";
+	  style = "mocha";
         };
         statusline.lualine.enable = true;
         # Fuzzy Finder
