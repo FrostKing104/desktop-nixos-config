@@ -87,8 +87,9 @@
     slurp
     # Wayland Clipboard Manager
     cliphist
-    openrgb
   ];
+
+  services.hardware.openrgb.enable = true;
 
   services.tailscale.enable = true;
 
