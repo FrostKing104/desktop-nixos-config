@@ -43,10 +43,14 @@
       
       # Yazi shell wrapper function
       function y() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
         yazi "$@" --cwd-file="$tmp"
-        IFS= read -r -d ''' cwd < "$tmp"
-        [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+        if [[ -f "$tmp" ]]; then
+          local cwd="$(cat "$tmp")"
+          if [[ -n "$cwd" && "$cwd" != "$PWD" ]]; then
+            builtin cd -- "$cwd"
+          fi
+        fi
         rm -f -- "$tmp"
       }
       
