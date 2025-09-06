@@ -42,7 +42,7 @@
       bindkey '^[[B' history-substring-search-down
       
       # Fastfetch on Startup
-      fastfetch | center_text
+      fastfetch
     '';
   };
 }
