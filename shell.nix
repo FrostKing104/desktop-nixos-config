@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {} }:
 
-pkgs.mkshell {
+pkgs.mkShell {
 
   packages = [ pkgs.python3 ];
 
