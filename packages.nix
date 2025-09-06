@@ -88,8 +88,6 @@
     # Wayland Clipboard Manager
     cliphist
     file
-    nautilus
-    xfce.thunar
     yazi
   ];
 
