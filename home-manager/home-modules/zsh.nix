@@ -41,19 +41,6 @@
       bindkey '^[[A' history-substring-search-up
       bindkey '^[[B' history-substring-search-down
       
-      # Yazi shell wrapper function
-      function y() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-        yazi "$@" --cwd-file="$tmp"
-        if [[ -f "$tmp" ]]; then
-          local cwd="$(cat "$tmp")"
-          if [[ -n "$cwd" && "$cwd" != "$PWD" ]]; then
-            builtin cd -- "$cwd"
-          fi
-        fi
-        rm -f -- "$tmp"
-      }
-      
       # Fastfetch on Startup
       fastfetch
     '';
