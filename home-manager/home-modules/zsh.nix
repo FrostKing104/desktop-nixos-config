@@ -41,13 +41,6 @@
       bindkey '^[[A' history-substring-search-up
       bindkey '^[[B' history-substring-search-down
       
-      center_text() {
-        local cols=$(tput cols)
-        while IFS= read -r line; do
-          printf "%*s\\n" $(( (''${#line} + cols) / 2 )) "$line"
-        done
-      }
-
       # Fastfetch on Startup
       fastfetch | center_text
     '';
