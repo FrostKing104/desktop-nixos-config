@@ -15,12 +15,12 @@
       switchflake = "rm /home/anklus/.config/fcitx5/profile.backup & sudo nixos-rebuild switch --flake ~/nixos-config";
       python = "cd ~/nixos-config/pythonDev; nix develop";
     };
-  
+
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];  # Just include git here as we'll handle others manually
     };
-  
+
     # Combined init content with powerlevel10k loading first
     initContent = ''
       # Load powerlevel10k theme first and source the configuration file
@@ -29,20 +29,31 @@
       
       # Set up FZF base explicitly
       export FZF_BASE="${pkgs.fzf}/share/fzf"
-    
+      
       # Source ZSH plugins properly
       source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
       source ${pkgs.zsh-history-substring-search}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
       source ${pkgs.fzf}/share/fzf/completion.zsh
       source ${pkgs.fzf}/share/fzf/key-bindings.zsh
-    
+      
       # Add key bindings for history-substring-search
       bindkey '^[[A' history-substring-search-up
       bindkey '^[[B' history-substring-search-down
       
       # Fastfetch on Startup
       fastfetch
+    '';
+
+    # Add the Yazi wrapper as a shell function
+    extraInit = ''
+      function y() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+        yazi "$@" --cwd-file="$tmp"
+        IFS= read -r -d '' cwd < "$tmp"
+        [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+        rm -f -- "$tmp"
+      }
     '';
   };
 }

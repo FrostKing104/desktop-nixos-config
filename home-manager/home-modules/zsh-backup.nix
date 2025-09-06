@@ -1,20 +1,19 @@
 { config, pkgs, lib, ... }:
-
 {
   # --- ZSH Configuration! --- #
   programs.zsh = {
     enable = true;
-
     # Aliases
     shellAliases = {
       # Editing Configs
-      config = "sudo nano ~/nixos-config/configuration.nix";
-      packages = "sudo nano ~/nixos-config/packages.nix";
-      hm = "sudo nano ~/nixos-config/home-manager/home.nix";
-      hmpackages = "sudo nano ~/nixos-config/home-manager/home-modules/packages.nix";
+      config = "sudo nvim ~/nixos-config/configuration.nix";
+      packages = "sudo nvim ~/nixos-config/packages.nix";
+      hm = "sudo nvim ~/nixos-config/home-manager/home.nix";
+      hmpackages = "sudo nvim ~/nixos-config/home-manager/home-modules/packages.nix";
       # Rebuilding
-      testflake = "sudo nixos-rebuild test --flake ~/nixos-config";
-      switchflake = "sudo nixos-rebuild switch --flake ~/nixos-config";
+      testflake = "rm /home/anklus/.config/fcitx5/profile.backup & sudo nixos-rebuild test --flake ~/nixos-config";
+      switchflake = "rm /home/anklus/.config/fcitx5/profile.backup & sudo nixos-rebuild switch --flake ~/nixos-config";
+      python = "cd ~/nixos-config/pythonDev; nix develop";
     };
   
     oh-my-zsh = {
@@ -22,14 +21,12 @@
       plugins = [ "git" ];  # Just include git here as we'll handle others manually
     };
   
-    # Load powerlevel10k theme first and source the configuration file
-    initExtraFirst = ''
+    # Combined init content with powerlevel10k loading first
+    initContent = ''
+      # Load powerlevel10k theme first and source the configuration file
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-    '';
-  
-    # ZSH plugin configuration - use proper NixOS paths
-    initExtra = ''
+      
       # Set up FZF base explicitly
       export FZF_BASE="${pkgs.fzf}/share/fzf"
     
@@ -43,6 +40,9 @@
       # Add key bindings for history-substring-search
       bindkey '^[[A' history-substring-search-up
       bindkey '^[[B' history-substring-search-down
+      
+      # Fastfetch on Startup
+      fastfetch
     '';
   };
 }
