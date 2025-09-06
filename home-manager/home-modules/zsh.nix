@@ -40,9 +40,8 @@
       # Add key bindings for history-substring-search
       bindkey '^[[A' history-substring-search-up
       bindkey '^[[B' history-substring-search-down
-    '';
-
-    initExtra = ''
+      
+      # Fastfetch on Startup
       fastfetch
     '';
   };
