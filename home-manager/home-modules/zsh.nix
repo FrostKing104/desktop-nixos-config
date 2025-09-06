@@ -42,7 +42,8 @@
       bindkey '^[[B' history-substring-search-down
       
       # Fastfetch on Startup
-      fastfetch
+      fastfetch --config ~/.config/fastfetch/ascii-only.jsonc
+      fastfetch --config ~/.config/fastfetch/text-only.jsonc
     '';
   };
 }
