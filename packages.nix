@@ -89,7 +89,7 @@
     cliphist
     file
     nautilus
-    thunar
+    xfce.thunar
     yazi
   ];
 
