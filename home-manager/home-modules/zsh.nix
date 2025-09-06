@@ -41,8 +41,18 @@
       bindkey '^[[A' history-substring-search-up
       bindkey '^[[B' history-substring-search-down
       
+      # Function to center text in the terminal
+      center_text() {
+        local text="$1"
+        local cols
+        cols=$(tput cols)
+        while read -r line; do
+          printf "%*s\\n" $(( (${#line} + cols) / 2 )) "$line"
+        done
+      }
+
       # Fastfetch on Startup
-      fastfetch
+      fastfetch | center_text
     '';
   };
 }
