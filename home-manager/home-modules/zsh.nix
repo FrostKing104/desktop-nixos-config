@@ -13,7 +13,7 @@
       # Rebuilding
       testflake = "rm /home/anklus/.config/fcitx5/profile.backup & sudo nixos-rebuild test --flake ~/nixos-config";
       switchflake = "rm /home/anklus/.config/fcitx5/profile.backup & sudo nixos-rebuild switch --flake ~/nixos-config";
-      python = "cd ~/nixos-config/pythonDev & nix develop"
+      python = "cd ~/nixos-config/pythonDev & nix develop";
     };
   
     oh-my-zsh = {
