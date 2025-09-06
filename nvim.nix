@@ -24,6 +24,7 @@
           html.enable = true;
           css.enable = true;
           bash.enable = true;
+          json.enable = true;
         };
       };
     };
