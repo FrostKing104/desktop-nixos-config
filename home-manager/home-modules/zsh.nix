@@ -46,7 +46,7 @@
         local text="$1"
         local cols
         cols=$(tput cols)
-        while read -r line; do
+        echo "$text" | while read -r line; do
           printf "%*s\\n" $(( (${#line} + cols) / 2 )) "$line"
         done
       }
