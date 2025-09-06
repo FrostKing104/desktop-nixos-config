@@ -87,6 +87,10 @@
     slurp
     # Wayland Clipboard Manager
     cliphist
+    file
+    nautilus
+    thunar
+    yazi
   ];
 
   services.hardware.openrgb.enable = true;
