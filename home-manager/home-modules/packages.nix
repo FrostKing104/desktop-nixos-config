@@ -16,5 +16,6 @@
     darkman
     tokyonight-gtk-theme
     osu-lazer-bin
+    amdgpu_top
   ];
 }
