@@ -89,7 +89,7 @@
     cliphist
     file
     yazi
-    chromium
+    brave
   ];
 
   services.hardware.openrgb.enable = true;
