@@ -89,6 +89,7 @@
     cliphist
     file
     yazi
+    chromium
   ];
 
   services.hardware.openrgb.enable = true;
