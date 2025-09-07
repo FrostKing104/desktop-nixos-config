@@ -90,7 +90,7 @@
     file
     yazi
     brave
-    lm-sensors
+    lm_sensors
   ];
 
   services.hardware.openrgb.enable = true;
