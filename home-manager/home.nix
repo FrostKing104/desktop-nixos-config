@@ -57,6 +57,8 @@
     GTK_THEME = "Adwaita:dark";
     GDK_SCALE = "1";
     GDK_DPI_SCALE = "1";
+    # Make Firefox use Wayland when available, as opposed to XWayland
+    MOZ_ENABLE_WAYLAND = "1";
   };
 
   # Let Home Manager install and manage itself.

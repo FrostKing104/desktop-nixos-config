@@ -6,10 +6,13 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable programs
-  programs.firefox.enable = true;
+  programs.firefox = true; 
   programs.zsh.enable = true;
   programs.steam.enable = true; 
 
+  # Make Firefox use Wayland when available, as opposed to XWayland ie. Compatibility Layer
+  environment.sessionVariables.MOZ_ENABLE_WAYLAND = "1"; 
+  
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
     kitty
