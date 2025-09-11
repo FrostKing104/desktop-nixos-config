@@ -144,7 +144,7 @@ in {
   users.users.anklus = {
     isNormalUser = true;
     description = "Anklus";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
