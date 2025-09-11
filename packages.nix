@@ -91,6 +91,7 @@
     yazi
     brave
     lm_sensors
+    opentabletdriver
   ];
 
   services.hardware.openrgb.enable = true;

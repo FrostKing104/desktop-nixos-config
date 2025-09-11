@@ -120,7 +120,6 @@ in {
 
   # Enable OpenTabletDriver for pen tablets
   hardware.opentabletdriver.enable = true;
-  programs.opentabletdriver.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
