@@ -55,6 +55,9 @@ in {
     options = "--delete-older-than 30d";
   };
 
+  # Enable Fstrim
+  services.fstrim.enable = true;
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -114,6 +117,9 @@ in {
   services.displayManager.sddm.theme = "catppuccin-mocha";
   
   services.desktopManager.plasma6.enable = true;
+
+  # Enable OpenTabletDriver for pen tablets
+  hardware.opentabletdriver.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
