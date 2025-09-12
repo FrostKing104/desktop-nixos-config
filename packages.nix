@@ -69,7 +69,7 @@
     pavucontrol
     swww
     tailscale
-    # sunshine
+    sunshine
     # GTK
     gnome-themes-extra
     gtk-engine-murrine
