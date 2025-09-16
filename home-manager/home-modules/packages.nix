@@ -18,5 +18,6 @@
     osu-lazer-bin
     amdgpu_top
     calibre
+    qbittorrent
   ];
 }
