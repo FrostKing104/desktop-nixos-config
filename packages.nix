@@ -2,12 +2,13 @@
 { config, pkgs, ... }:
 
 let
-  obsidian-fixed = pkgs.makeWrapper {
-    pname = "obsidian";
-    version = pkgs.obsidian.version;
-    executable = "${pkgs.obsidian}/bin/obsidian";
-    addArgs = [ "--ozone-platform=x11" ];
-  };
+  # This creates a new executable script called "obsidian"
+  obsidian-fixed = pkgs.writeShellScriptBin "obsidian" ''
+    #!${pkgs.runtimeShell}
+    # Execute the real obsidian binary with the required flag.
+    # "$@" passes along any extra arguments (like file paths).
+    exec ${pkgs.obsidian}/bin/obsidian --ozone-platform=x11 "$@"
+  '';
 in
 {
   # Allow unfree packages
