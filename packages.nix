@@ -2,21 +2,10 @@
 { config, pkgs, ... }:
 
 let
-  # 1. Our working wrapper script from before
   obsidian-fixed = pkgs.writeShellScriptBin "obsidian" ''
     #!${pkgs.runtimeShell}
     exec ${pkgs.obsidian}/bin/obsidian --ozone-platform=x11 "$@"
   '';
-
-  # 2. The new desktop file that points to our script
-  obsidian-desktop-item = pkgs.makeDesktopItem {
-    name = "obsidian"; # The name of the .desktop file itself
-    exec = "${obsidian-fixed}/bin/obsidian %U"; # The command to execute
-    icon = "obsidian"; # Use the original icon name, which Nix will find
-    desktopName = "Obsidian"; # The user-facing name in your launcher
-    comment = "A private and flexible writing app that adapts to the way you think.";
-    categories = [ "Office" "Utility" ];
-  };
 in
 {
   # Allow unfree packages
