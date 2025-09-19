@@ -1,6 +1,14 @@
 # ~/nixos-config/packages.nix
 { config, pkgs, ... }:
 
+let
+  obsidian-fixed = pkgs.makeWrapper {
+    pname = "obsidian";
+    version = pkgs.obsidian.version;
+    executable = "${pkgs.obsidian}/bin/obsidian";
+    addArgs = [ "--ozone-platform=x11" ];
+  };
+in
 {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -94,16 +102,6 @@
     lm_sensors
     opentabletdriver
   ];
-
-  let
-    obsidian-fixed = pkgs.makeWrapper {
-      pname = "obsidian";
-      version = pkgs.obsidian.version;
-      executable = "${pkgs.obsidian}/bin/obsidian";
-      addArgs = [ "--ozone-platform=x11" ];
-    };
-  in
-  {
 
   services.hardware.openrgb.enable = true;
 
