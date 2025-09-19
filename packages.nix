@@ -50,7 +50,8 @@
     glib
     ticktick
     signal-desktop
-    obsidian
+    # obsidian
+    obsidian-fixed
     sassc
     gtk-engine-murrine
     gnome-themes-extra
@@ -93,6 +94,16 @@
     lm_sensors
     opentabletdriver
   ];
+
+  let
+    obsidian-fixed = pkgs.makeWrapper {
+      pname = "obsidian";
+      version = pkgs.obsidian.version;
+      executable = "${pkgs.obsidian}/bin/obsidian";
+      addArgs = [ "--ozone-platform=x11" ];
+    };
+  in
+  {
 
   services.hardware.openrgb.enable = true;
 
