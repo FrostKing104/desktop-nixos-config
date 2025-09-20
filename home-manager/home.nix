@@ -52,10 +52,14 @@
     };
   };
 
-  # CORRECTED VERSION
+  # Custom Added Fonts
+        #Tartine Script
   home.file.".local/share/fonts/TartineScript-Regular.ttf" = {
     # The path is now a Nix path literal, not a string, and has no spaces.
     source = ./fonts/TartineScript-Regular.ttf; 
+  };
+  home.file.".local/share/fonts/Kugile.ttf" = {
+    source = ./fonts/Kugile.ttf;
   };
 
   fonts.fontconfig.enable = true;
