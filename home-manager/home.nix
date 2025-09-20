@@ -52,6 +52,14 @@
     };
   };
 
+  # CORRECTED VERSION
+  home.file.".local/share/fonts/TartineScript-Regular.ttf" = {
+    # The path is now a Nix path literal, not a string, and has no spaces.
+    source = ./fonts/TartineScript-Regular.ttf; 
+  };
+
+  fonts.fontconfig.enable = true;
+
   # Environment variables for better GTK rendering
   home.sessionVariables = {
     GTK_THEME = "Adwaita:dark";
