@@ -29,6 +29,7 @@ in
     brightnessctl
     hyprland
     zsh
+    tree
     wofi
     waybar
     swaynotificationcenter
