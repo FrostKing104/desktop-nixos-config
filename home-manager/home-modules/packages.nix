@@ -19,5 +19,6 @@
     amdgpu_top
     calibre
     qbittorrent
+    heroic
   ];
 }
