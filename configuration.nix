@@ -8,7 +8,7 @@ let
   unstable = import <nixos-unstable> { config = config.nixpkgs.config; };
   aagl = import (builtins.fetchTarball {
     url = "https://github.com/ezKEa/aagl-gtk-on-nix/archive/release-25.05.tar.gz";
-    sha256 = "0v1mfggrq7h2kgnznz90xdglhr6c3834hw7achrh95bpmwxlrb4d";
+    sha256 = "0p4qjwdj1fsm2vakn94mbbgcgq6pdcha0jjmbvwvwvnjkdhcn5p9";
   });
 in {
   imports =
