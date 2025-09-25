@@ -32,7 +32,7 @@
           indentscope = {
             enable = true;
             # You can optionally configure the animation style here
-            # options.animation = "fall"; # e.g., 'fall', 'fly', 'jumpline'
+            options.animation = "fall"; # e.g., 'fall', 'fly', 'jumpline'
           };
         };
       };
