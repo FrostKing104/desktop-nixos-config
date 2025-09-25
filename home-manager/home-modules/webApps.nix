@@ -1,32 +1,23 @@
 # webApps.nix
-# This file defines all of your browser-based web applications.
 
 { pkgs, ... }:
 
 {
-  # define the required packages
   home.packages = [
     pkgs.chromium
     pkgs.papirus-icon-theme
   ];
 
-  # Define all your web app desktop entries in this set
   xdg.desktopEntries = {
     "youtube-music" = {
       name = "YouTube Music";
-      # The --user-data-dir flag creates a dedicated, persistent profile.
-      # The '%h' is a special code that expands to your home directory.
-      exec = ''
-        ${pkgs.chromium}/bin/chromium \
-          --app=https://music.youtube.com \
-          --user-data-dir=%h/.config/chromium-web-apps/youtube-music
-      '';
+      # Corrected: The entire command must be on a single line.
+      exec = "${pkgs.chromium}/bin/chromium --app=https://music.youtube.com --user-data-dir=%h/.config/chromium-web-apps/youtube-music";
       icon = "youtube-music";
       comment = "YouTube Music streaming service";
       terminal = false;
       type = "Application";
       categories = [ "AudioVideo" "Audio" "Network" ];
     };
-
   };
 }
