@@ -14,7 +14,7 @@
   xdg.desktopEntries = {
     "youtube-music" = {
       name = "YouTube Music";
-      exec = "${pkgs.chromium}/bin/chromium --app=https://music.youtube.com --user-data-dir=%h/.config/chromium-youtube-music --enable-features=VaapiVideoDecoder --disable-features=UseChromeOSDirectVideoDecoder --class=youtube-music";
+      exec = "${pkgs.chromium}/bin/chromium --app=https://music.youtube.com";
       icon = "youtube-music";
       comment = "YouTube Music streaming service";
       terminal = false;
