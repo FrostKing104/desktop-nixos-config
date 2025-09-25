@@ -40,6 +40,9 @@ in {
   programs.dconf.enable = true;
   services.dbus.enable = true;
 
+  # Enable Virtualisation
+  virtualisation.libvirtd.enable = true;
+
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
