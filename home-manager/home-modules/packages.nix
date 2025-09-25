@@ -21,5 +21,6 @@
     qbittorrent
     heroic
     gnome-boxes
+    chromium
   ];
 }
