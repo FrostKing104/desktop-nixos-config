@@ -1,6 +1,8 @@
 # webApps.nix
+# This file defines all of your browser-based web applications.
 
-{ pkgs, ... }:
+# 1. Add `config` to the arguments here
+{ pkgs, config, ... }:
 
 {
   home.packages = [
@@ -11,8 +13,8 @@
   xdg.desktopEntries = {
     "youtube-music" = {
       name = "YouTube Music";
-      # Corrected: The entire command must be on a single line.
-      exec = "${pkgs.chromium}/bin/chromium --app=https://music.youtube.com --user-data-dir=%h/.config/chromium-web-apps/youtube-music";
+      # 2. Use the Nix variable for the absolute home path
+      exec = "${pkgs.chromium}/bin/chromium --app=https://music.youtube.com --user-data-dir=${config.home.homeDirectory}/.config/chromium-web-apps/youtube-music";
       icon = "youtube-music";
       comment = "YouTube Music streaming service";
       terminal = false;
