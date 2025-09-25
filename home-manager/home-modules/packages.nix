@@ -20,5 +20,6 @@
     calibre
     qbittorrent
     heroic
+    gnome-boxes
   ];
 }
