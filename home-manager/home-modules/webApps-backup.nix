@@ -14,13 +14,7 @@
   xdg.desktopEntries = {
     "youtube-music" = {
       name = "YouTube Music";
-      # The --user-data-dir flag creates a dedicated, persistent profile.
-      # The '%h' is a special code that expands to your home directory.
-      exec = ''
-        ${pkgs.chromium}/bin/chromium \
-          --app=https://music.youtube.com \
-          --user-data-dir=%h/.config/chromium-web-apps/youtube-music
-      '';
+      exec = "${pkgs.chromium}/bin/chromium --app=https://music.youtube.com";
       icon = "youtube-music";
       comment = "YouTube Music streaming service";
       terminal = false;
