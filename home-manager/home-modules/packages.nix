@@ -22,5 +22,6 @@
     heroic
     gnome-boxes
     chromium
+    cava
   ];
 }
