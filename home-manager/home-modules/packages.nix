@@ -23,5 +23,6 @@
     gnome-boxes
     chromium
     cava
+    vscodium
   ];
 }
