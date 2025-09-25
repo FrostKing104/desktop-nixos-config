@@ -9,12 +9,13 @@
         theme = {
           enable = true;
           name = "catppuccin";
-	  style = "mocha";
+          style = "mocha";
         };
         statusline.lualine.enable = true;
         # Fuzzy Finder
         telescope.enable = true;
-	autocomplete.nvim-cmp.enable = true;
+        autocomplete.nvim-cmp.enable = true;
+        
         # Language Support
         lsp.enable = true;
         languages = {
@@ -24,6 +25,15 @@
           html.enable = true;
           css.enable = true;
           bash.enable = true;
+        };
+        
+        # 👇 Add this block for animated indent lines
+        mini = {
+          indentscope = {
+            enable = true;
+            # You can optionally configure the animation style here
+            # options.animation = "fall"; # e.g., 'fall', 'fly', 'jumpline'
+          };
         };
       };
     };
