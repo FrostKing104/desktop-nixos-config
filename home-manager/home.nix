@@ -7,6 +7,7 @@
     ./home-modules/packages.nix
     ./home-modules/zsh.nix    
     ./home-modules/fcitx5.nix
+    ./home-modules/webApps.nix
   ];
 
   # Home Manager needs a bit of information about you and the
