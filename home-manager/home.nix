@@ -8,7 +8,7 @@
     ./home-modules/zsh.nix    
     ./home-modules/fcitx5.nix
     ./home-modules/webApps.nix
-    ./home-modules/nixvim.nix
+    ./home-modules/nixvim/nixvim.nix
   ];
 
   # Home Manager needs a bit of information about you and the
