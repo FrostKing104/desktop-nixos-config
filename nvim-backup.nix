@@ -1,16 +1,7 @@
 { pkgs, lib, ... }:
 
 {
-  # Add the extraConfig block here
-  programs.neovim = {
-    enable = true;
-    extraConfig = ''
-      " Set 2-space indentation for Nix files
-      autocmd FileType nix setlocal shiftwidth=2 softtabstop=2 expandtab
-    '';
-  };
-
-  # Your existing nvf configuration
+  programs.neovim.enable = true;
   programs.nvf = {
     enable = true;
     settings = {
