@@ -30,7 +30,9 @@
         ./configuration.nix
         home-manager.nixosModules.default
         {
-          home-manager.users.anklus.imports = [
+          home-manager.users.anklus = {
+	  extraSpecialArgs = { inherit inputs; };
+	  imports = [
             nixvim.homeManagerModules.nixvim
           ];
         }
