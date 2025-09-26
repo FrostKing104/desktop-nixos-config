@@ -38,14 +38,7 @@ in
           tab_char = "│";
         };
         scope = {
-          enabled = true;
-          char = "▎";  # Thicker character makes animations more visible
-          show_start = true;
-          show_end = true;
-          show_exact_scope = true;
-          injected_languages = false;
-          highlight = [ "Function" "Label" ];
-          priority = 500;
+          enabled = false;  # Disable scope since we're using mini.indentscope
         };
         exclude = {
           filetypes = [
