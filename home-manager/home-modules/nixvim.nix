@@ -47,15 +47,14 @@ in
         settings.indent.enable = true;
       };
       
-      # LSP Core & Servers 💻
       lsp.enable = true;
-      lspconfig = {
-        enable = true;
-        servers = {
-          pyright.enable = true;
-          bashls.enable = true;
-          nil.enable = true;
-        };
+      lspconfig.enable = true; # Enable the lspconfig plugin
+
+      # Define servers here (under programs.nixvim.lsp.servers)
+      lsp.servers = {
+        pyright.enable = true;
+        bashls.enable = true;
+        nil.enable = true;
       };
 
       # Telescope (Fuzzy Finder) 🔭
