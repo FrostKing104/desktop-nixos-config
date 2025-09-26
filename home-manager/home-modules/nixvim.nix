@@ -27,6 +27,10 @@ in
         options = {
           try_as_border = true;
         };
+        draw = {
+          delay = 67;  # Default is 100ms, this is ~1.5x faster (100/1.5 ≈ 67)
+          animation = "linear";
+        };
       };
     };
     
