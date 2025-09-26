@@ -33,7 +33,7 @@
           home-manager.users.anklus.imports = [
               nixvim.homeManagerModules.nixvim
           ];
-        };
+        },
       ];
     };
   };
