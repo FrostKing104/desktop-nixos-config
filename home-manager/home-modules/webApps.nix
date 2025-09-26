@@ -21,6 +21,14 @@
       type = "Application";
       categories = [ "AudioVideo" "Audio" "Network" ];
     };
-
+    "facebook-messenger" = {
+      name = "Messenger";
+      exec = "${pkgs.chromium}/bin/chromium --app=https://messenger.com";
+      icon = "facebook-messenger";
+      comment = "Facebook Messenger E2EE messaging service";
+      terminal = false;
+      type = "Application";
+      categories = [ "Network" "InstantMessaging" ];
+    };
   };
 }
