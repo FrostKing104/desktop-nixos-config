@@ -19,7 +19,7 @@
 
     # MOVED: nix-flatpak also goes inside the inputs block
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-  
+    
   }; # <- This is the single, correct closing brace for the entire inputs block
 
   outputs = { self, nixpkgs, nix-flatpak, home-manager, nixvim, ... }@inputs: {
@@ -31,12 +31,13 @@
         home-manager.nixosModules.default
         {
           home-manager.users.anklus = {
-	  extraSpecialArgs = { inherit inputs; };
-	  imports = [
-            nixvim.homeManagerModules.nixvim
-          ];
+            extraSpecialArgs = { inherit inputs; };
+            imports = [
+              nixvim.homeManagerModules.nixvim
+            ];
+          }; # <--- MISSING CLOSING BRACKET AND SEMICOLON WERE HERE
         }
-      ]
+      ];
     };
   };
 }
