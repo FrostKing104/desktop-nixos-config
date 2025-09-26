@@ -1,30 +1,21 @@
 { pkgs, lib, ... }:
 
 {
-  # Add the extraConfig block here
-  programs.neovim = {
-    enable = true;
-    extraConfig = ''
-      " Set 2-space indentation for Nix files
-      autocmd FileType nix setlocal shiftwidth=2 softtabstop=2 expandtab
-    '';
-  };
+  # This line is all you need from the base neovim program
+  programs.neovim.enable = true;
 
-  # Your existing nvf configuration
   programs.nvf = {
     enable = true;
     settings = {
       vim = {
-        theme = {
-          enable = true;
-          name = "catppuccin";
-          style = "mocha";
-        };
-        statusline.lualine.enable = true;
-        # Fuzzy Finder
-        telescope.enable = true;
-        autocomplete.nvim-cmp.enable = true;
-        
+        # ... other settings like theme, lualine, etc.
+
+        # 👇 Add your custom config here, inside the vim block
+        extraConfig = ''
+          " Set 2-space indentation for Nix files
+          autocmd FileType nix setlocal shiftwidth=2 softtabstop=2 expandtab
+        '';
+
         # Language Support
         lsp.enable = true;
         languages = {
@@ -35,15 +26,8 @@
           css.enable = true;
           bash.enable = true;
         };
-        
-        # 👇 Add this block for animated indent lines
-        mini = {
-          indentscope = {
-            enable = true;
-            # You can optionally configure the animation style here
-            # options.animation = "fall"; # e.g., 'fall', 'fly', 'jumpline'
-          };
-        };
+
+        # ... rest of your settings
       };
     };
   };
