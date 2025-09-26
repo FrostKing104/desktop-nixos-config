@@ -1,14 +1,15 @@
+{ config, pkgs, ... }:
+
 {
   # ⚙️ NixVim Configuration
   programs.nixvim = {
-    enable = true;
+    enable = true; # <-- ADD a comma here, as it's followed by another attribute
 
-    # 1. colorschemes and its sub-options must be inside programs.nixvim
+    # ✅ CORRECT SCOPE: colorschemes is a sub-attribute of programs.nixvim
     colorschemes.catppuccin = {
-      # Catppuccin requires 'enable = true;' to be a sibling of its settings.
+      # The 'enable' flag for the colorscheme itself
       enable = true; 
       
-      # The rest of your Catppuccin configuration
       color_overrides = {
         mocha = {
           base = "#1e1e2f";
@@ -37,9 +38,10 @@
         ];
       };
       term_colors = true;
-    };
+    }; # <--- NO comma needed here, as it's the second-to-last attribute
     
-    # 2. plugins and its sub-options must also be inside programs.nixvim
+    # ✅ CORRECT SCOPE: plugins is also a sub-attribute of programs.nixvim
     plugins.lualine.enable = true;
-  };
+    
+  }; # <-- The programs.nixvim block correctly closes here
 }
