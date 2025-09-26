@@ -6,12 +6,9 @@
   programs.nixvim = {
     enable = true;
   };
+  
+  colorschemes.catppuccin.enable = true;
+    
+  plugins.lualine.enable = true;
 
-  colorschemes.catppuccin = {
-    enable = true;
-    settings = {
-      # Set the 'mocha' flavor
-      flavour = "mocha";
-    };
-  };
 }
