@@ -36,7 +36,7 @@
             nixvim.homeManagerModules.nixvim
           ];
         }
-      ];
+      ]
     };
   };
 }
