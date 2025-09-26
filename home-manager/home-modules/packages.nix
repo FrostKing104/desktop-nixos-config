@@ -25,4 +25,7 @@
     cava
     vscodium
   ];
+
+  programs.nixvim.enable = true;
+
 }
