@@ -11,9 +11,13 @@
     settings = {
     # Set the 'mocha' flavor
     flavour = "mocha";
+    };
   };   
 
-  plugins.lualine.enable = true;
-  
+  plugins = {
+
+  lualine.enable = true;
+
+  blankline.enable = true;
   };
 }
