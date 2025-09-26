@@ -1,34 +1,25 @@
-{ config, pkgs, inputs, ... }: # ⬅️ Must include 'inputs'
+{ config, pkgs, inputs, ... }:
 
 let
-  # Define a shorthand for the nixvim library, accessing it directly from the flake input.
   nixvimLib = inputs.nixvim.lib;
 in
 {
-  # ⚙️ NixVim Configuration
   programs.nixvim = {
     enable = true;
 
-    # Set the Neovim leader key
     opts.mapleader = " ";
     opts.maplocalleader = " ";
 
-    # 1. Catppuccin Mocha Colorscheme 🎨
     colorschemes.catppuccin = {
       enable = true;
       settings.flavour = "mocha";
     };
 
-    # 2. Plugins Configuration
     plugins = {
-      # ⚠️ FIX: Removed the extra 'plugins' nesting here. It should be plugins.<plugin-name> = { ... }
-      
-      # Indent-blankline (Indentscope animated line) 🌲
       indent-blankline = {
         enable = true;
         settings.scope = {
-          # ✅ FIX: Using the robust 'nixvimLib.raw'
-          show_start = nixvimLib.raw "false"; 
+          show_start = nixvimLib.raw "false";
           show_end = nixvimLib.raw "false";
           enabled = true;
           highlight = nixvimLib.raw "require('catppuccin.groups.integrations.ibl').get()";
@@ -39,25 +30,15 @@ in
         };
       };
 
-      # Treesitter (Syntax Highlighting)
       treesitter = {
         enable = true;
         settings.ensure_installed = [ "python" "bash" "nix" "lua" ];
         settings.highlight.enable = true;
         settings.indent.enable = true;
       };
-      
-      lsp.enable = true;
+
       lspconfig.enable = true; # Enable the lspconfig plugin
 
-      # Define servers here (under programs.nixvim.lsp.servers)
-      lsp.servers = {
-        pyright.enable = true;
-        bashls.enable = true;
-        nil.enable = true;
-      };
-
-      # Telescope (Fuzzy Finder) 🔭
       telescope = {
         enable = true;
         keymaps = {
@@ -66,6 +47,18 @@ in
           "<leader>fb" = { action = "buffers"; options.desc = "Find Buffers"; };
         };
       };
+    }; # End of 'plugins'
+
+    # 🟢 THE FIX IS HERE: 'lsp' is a top-level option under programs.nixvim
+    lsp = {
+      enable = true; # Enable general LSP features
+      servers = { # Define servers here
+        pyright.enable = true;
+        bashls.enable = true;
+        # ⚠️ NOTE: 'nil' is defined under the 'servers' block, which is correct
+        nil.enable = true; 
+      };
     };
+
   };
 }
