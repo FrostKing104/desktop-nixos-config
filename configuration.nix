@@ -18,7 +18,7 @@ in {
       ./packages.nix
       ./hyprland.nix
       aagl.module
-      ./nvim.nix
+      # ./nvim.nix
     ];
 
   # Bootloader.
