@@ -17,16 +17,36 @@ in
     plugins = {
       indent-blankline = {
         enable = true;
-        #settings.scope = {
-        #  show_start = nixvimLib.raw "false";
-        #  show_end = nixvimLib.raw "false";
-        #  enabled = true;
-        #  highlight = nixvimLib.raw "require('catppuccin.groups.integrations.ibl').get()";
-        #  animate = {
-        #    enabled = true;
-        #    duration = 500;
-        #  };
-        #};
+        settings = {
+          indent = {
+            char = "│";
+            tab_char = "│";
+          };
+          scope = {
+            enabled = true;
+            char = "│";
+            show_start = true;
+            show_end = true;
+            injected_languages = false;
+            highlight = [ "Function" "Label" ];
+            priority = 500;
+          };
+          exclude = {
+            filetypes = [
+              "help"
+              "alpha"
+              "dashboard"
+              "neo-tree"
+              "Trouble"
+              "trouble"
+              "lazy"
+              "mason"
+              "notify"
+              "toggleterm"
+              "lazyterm"
+            ];
+          };
+        };
       };
     };
     plugins.treesitter = {
