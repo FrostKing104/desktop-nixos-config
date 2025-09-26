@@ -26,7 +26,7 @@ in
         #    enabled = true;
         #    duration = 500;
         #  };
-        };
+        #};
       };
     };
     plugins.treesitter = {
