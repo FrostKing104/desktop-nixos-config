@@ -9,12 +9,6 @@
     colorschemes.catppuccin = {
       # The 'enable' flag for the colorscheme itself
       enable = true; 
-      
-      color_overrides = {
-        mocha = {
-          base = "#1e1e2f";
-        };
-      };
       disable_underline = true;
       flavour = "mocha";
       integrations = {
