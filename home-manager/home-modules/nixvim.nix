@@ -18,7 +18,7 @@
 
     lualine.enable = true;
 
-    blankline.enable = true;
+    indent-blankline.enable = true;
     };
   };
 }
