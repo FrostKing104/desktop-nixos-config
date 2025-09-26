@@ -19,10 +19,16 @@
     amdgpu_top
     calibre
     qbittorrent
-    heroic
     gnome-boxes
     chromium
     cava
     vscodium
+    lutris
+    legendary-gl
+    rare
+    wine
+    winetricks
+    ncmpcpp
+    mpc
   ];
 }

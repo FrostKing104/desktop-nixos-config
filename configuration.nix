@@ -35,6 +35,9 @@ in {
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
 
+  # Enable 32 Bit (For Epic Games Store)
+  hardware.graphics.enable32Bit = true;
+
   # GTK Configuration
   programs.dconf.enable = true;
   services.dbus.enable = true;
@@ -157,7 +160,7 @@ in {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    backupFileExtension = "backup";
+    backupFileExtension = "bak";
     users.anklus = import ./home-manager/home.nix;
   };
 

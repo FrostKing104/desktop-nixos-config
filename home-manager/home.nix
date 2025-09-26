@@ -9,6 +9,7 @@
     ./home-modules/fcitx5.nix
     ./home-modules/webApps.nix
     ./home-modules/nixvim/nixvim.nix
+    ./home-modules/mpd.nix
   ];
 
   # Home Manager needs a bit of information about you and the
