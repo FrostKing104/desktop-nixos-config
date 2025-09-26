@@ -13,8 +13,6 @@
     # MOVED: nix-flatpak also goes inside the inputs block
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   
-    kickstart-nixvim.url = "github:JMartJonesy/kickstart.nixvim";
-
   }; # <- This is the single, correct closing brace for the entire inputs block
 
   outputs = { self, nixpkgs, nix-flatpak, home-manager, ... }@inputs: {

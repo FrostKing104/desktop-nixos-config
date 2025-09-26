@@ -8,7 +8,6 @@
     ./home-modules/zsh.nix    
     ./home-modules/fcitx5.nix
     ./home-modules/webApps.nix
-    inputs.kickstart-nixvim.homeManagerModules.default
   ];
 
   # Home Manager needs a bit of information about you and the
