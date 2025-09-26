@@ -19,6 +19,7 @@ in {
       ./hyprland.nix
       aagl.module
       # ./nvim.nix
+      ./nixvim.nix
     ];
 
   # Bootloader.
