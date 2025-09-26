@@ -22,13 +22,18 @@
   
   }; # <- This is the single, correct closing brace for the entire inputs block
 
-  outputs = { self, nixpkgs, nix-flatpak, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, nix-flatpak, home-manager, nixvim, ... }@inputs: {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
         nix-flatpak.nixosModules.nix-flatpak
         ./configuration.nix
         home-manager.nixosModules.default
+        {
+          home-manager.users.anklus.imports = [
+            nixvim.homeManagerModules.nixvim
+          ];
+        }
       ];
     };
   };
