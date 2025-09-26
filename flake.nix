@@ -31,11 +31,13 @@
         home-manager.nixosModules.default
         {
           home-manager.users.anklus = {
-            extraSpecialArgs = { inherit inputs; };
+            # 🟢 FIX: Add the semicolon (or comma) here
+            extraSpecialArgs = { inherit inputs; }; 
+            
             imports = [
               nixvim.homeManagerModules.nixvim
             ];
-          }; # <--- MISSING CLOSING BRACKET AND SEMICOLON WERE HERE
+          }; # Correctly closed attribute set
         }
       ];
     };
