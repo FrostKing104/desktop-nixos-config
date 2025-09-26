@@ -1,19 +1,19 @@
 { config, pkgs, inputs, ... }:
 
 {
-  # All your NixVim settings go in here
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
 
-    # Import themes from nix-colors
-    colorschemes.catppuccin.from = "${inputs.nix-colors}/themes/catppuccin.nix";
+    # DELETE THE LINE BELOW - IT'S INCORRECT AND NOT NEEDED
+    # colorschemes.catppuccin.from = "${inputs.nix-colors}/themes/catppuccin.nix";
 
-    # Set the colorscheme and flavour
+    # These settings are all you need for the theme to work.
+    # When you enable the catppuccin plugin, nixvim automatically finds it.
     colorscheme = "catppuccin";
     plugins.catppuccin = {
       enable = true;
-      flavour = "mocha"; # frappe, macchiato, mocha
+      flavour = "mocha";
     };
 
     # Basic options
