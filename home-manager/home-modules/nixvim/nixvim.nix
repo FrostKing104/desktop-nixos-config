@@ -64,9 +64,16 @@ in
     
     plugins.telescope = {
       enable = true;
+      keymaps = [
+        { key = "<leader>f"; action = "<cmd>Telescope find_files<CR>"; mode = "n"; desc = "Find Files"; }
+      ];
     };
 
     plugins.gitsigns = {
+      enable = true;
+    };
+
+    plugins.plenary = {
       enable = true;
     };
 
