@@ -61,5 +61,14 @@ in
         };
       };
     };
+    
+    plugins.telescope = {
+      enable = true;
+    };
+
+    plugins.gitsigns = {
+      enable = true;
+    };
+
   } // lspConfig;
 }
