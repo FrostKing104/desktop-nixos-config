@@ -1,9 +1,10 @@
 { config, pkgs, inputs, ... }:
 
+
 {
   # IMPORTS
   imports = [
-    # REMOVED: inputs.catppuccin.homeModules.catppuccin - this is handled in catppuccin.nix
+    inputs.catppuccin.homeModules.catppuccin
     ./wofi.nix
     ./home-modules/packages.nix
     ./home-modules/zsh.nix    
@@ -29,22 +30,22 @@
   # changes in each release.
   home.stateVersion = "24.05";
 
-  # GTK Configuration (back to manual since Catppuccin GTK is removed)
- # gtk = {
- #   enable = true;
- #   font = {
- #     name = "Ubuntu";
- #     size = 11;
- #   };
- #   theme = {
- #     package = pkgs.gnome-themes-extra;
- #     name = "Adwaita-dark";  # Use dark variant
- #   };
- #   iconTheme = {
- #     package = pkgs.adwaita-icon-theme;
- #     name = "Adwaita";
- #   };
- # };
+  # GTK Configuration
+  gtk = {
+    enable = true;
+    font = {
+      name = "Ubuntu";
+      size = 11;
+    };
+    theme = {
+      package = pkgs.gnome-themes-extra;
+      name = "Adwaita";
+    };
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+  };
 
   # DConf settings for GTK font rendering
   dconf.settings = {
@@ -71,9 +72,9 @@
 
   # Environment variables for better GTK rendering
   home.sessionVariables = {
-    #GTK_THEME = "Adwaita:dark";  # Back to manual GTK theme
+    GTK_THEME = "Adwaita:dark";
     GDK_SCALE = "1";
-    #GDK_DPI_SCALE = "1";
+    GDK_DPI_SCALE = "1";
     # Make Firefox use Wayland when available, as opposed to XWayland
     MOZ_ENABLE_WAYLAND = "1";
   };
@@ -86,3 +87,4 @@
     recursive = true;
   };
 }
+

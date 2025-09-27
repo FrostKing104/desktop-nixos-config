@@ -160,7 +160,8 @@ in {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    backupFileExtension = "bak";
+    backupFileExtension = "backup";
+    extraSpecialArgs = { inherit inputs; };
     users.anklus = import ./home-manager/home.nix;
   };
 

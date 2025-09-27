@@ -11,7 +11,14 @@
     '';
     # REMOVED: user = "anklus"; - Home Manager handles the user automatically.
   };
-
+  
+  programs.rmpc = {
+    enable = true;
+    config = ''
+      address = "127.0.0.1:6600"
+    '';
+  };
+  
   # USE systemd.user.services to configure the user-level systemd unit
   systemd.user.services.mpd.environment = {
     # It's better to use lib.strings.toString config.users.users.anklus.uid 
