@@ -45,6 +45,29 @@ in {
   # Enable Virtualisation
   virtualisation.libvirtd.enable = true;
 
+  # Tailscale
+
+  # 1. Enable Tailscale service
+  services.tailscale.enable = true;
+
+  # 2. Configure Tailscale to handle routing features (subnet routes and exit nodes)
+  services.tailscale.useRoutingFeatures = "server";
+  
+  # 3. Add the flag to the 'tailscale up' command, making the machine advertise itself as an Exit Node.
+  services.tailscale.extraUpFlags = [ 
+    "--advertise-exit-node"
+  ];
+  
+  # 4. CRITICAL FIX: Allow WireGuard packets (Tailscale's tunnel) to pass through NixOS firewall
+  # This prevents loss of internet when using the exit node.
+  networking.firewall.checkReversePath = "loose";
+
+  # 5. IP forwarding (The useRoutingFeatures="both" handles this, but explicit setup is safe)
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = 1;
+    "net.ipv6.conf.all.forwarding" = 1;
+  };
+
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

@@ -104,7 +104,6 @@ in
 
   services.hardware.openrgb.enable = true;
 
-  services.tailscale.enable = true;
 
   services.flatpak = {
     enable = true;
