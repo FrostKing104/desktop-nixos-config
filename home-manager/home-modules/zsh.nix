@@ -43,7 +43,7 @@
       
       # Fastfetch on Startup
       fastfetch --config ~/.config/fastfetch/ascii-only.jsonc
-      fastfetch --config ~/.config/fastfetch/text-only.jsonc
+      fastfetch --config ~/.config/fastfetch/config.jsonc
     '';
   };
 }
