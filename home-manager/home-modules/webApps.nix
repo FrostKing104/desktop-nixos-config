@@ -30,5 +30,16 @@
       type = "Application";
       categories = [ "Network" "InstantMessaging" ];
     };
+    "ticktick" = {
+      name = "TickTick";
+      # Fixed: Properly escape the URL with double quotes and escape internal quotes
+      exec = "${pkgs.chromium}/bin/chromium --app=\"https://ticktick.com/webapp/#q/today/tasks/\"";
+      icon = "ticktick";
+      comment = "TickTick To-Do List and Task Manager";
+      terminal = false;
+      type = "Application";
+      # Fixed: Use only one main category to avoid menu duplication
+      categories = [ "Office" ];
+    };
   };
 }

@@ -55,7 +55,6 @@ in
     libnotify
     swappy
     glib
-    ticktick
     signal-desktop
     # obsidian
     obsidian-fixed
