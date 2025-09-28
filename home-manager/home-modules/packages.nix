@@ -30,5 +30,7 @@
     winetricks
     ncmpcpp
     mpc
+    yt-dlp
+    ffmpeg
   ];
 }

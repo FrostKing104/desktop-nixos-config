@@ -10,8 +10,8 @@
     ./home-modules/fcitx5.nix
     ./home-modules/webApps.nix
     ./home-modules/nixvim/nixvim.nix
-    ./home-modules/mpd.nix
     ./home-modules/catppuccin.nix
+    ./home-modules/mpd-rmpc/mpd-rmpc.nix
   ];
 
   # Home Manager needs a bit of information about you and the
